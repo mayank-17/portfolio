@@ -34,7 +34,7 @@ function markdownToHtml(markdown: string): string {
 
   // Unordered lists
   html = html.replace(/^\s*[-*]\s+(.*$)/gim, '<li>$1</li>');
-  html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+  html = html.replace(/(<li>[\s\S]*<\/li>)/, '<ul>$1</ul>');
 
   // Blockquotes
   html = html.replace(/^>\s+(.*$)/gim, '<blockquote>$1</blockquote>');
